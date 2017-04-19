@@ -1,10 +1,5 @@
 <h1><font color=#0000cc>Edit the Task</font></h1>
 
-<%= form_for(@task) do |f| %>
-   <%= f.label :content, 'Task' %>
-   <%= f.text_field :content %>
-   
-   <%= f.submit 'Post' %>
-<% end %>
+<%= render 'form', task: @task %>
 
 <%= link_to 'Back to index', tasks_path %>
