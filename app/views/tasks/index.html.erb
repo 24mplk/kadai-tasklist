@@ -1,0 +1,9 @@
+<h1><font color=#0000cc>All Tasks</font></h1>
+  
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= link_to task.id, task %> : <%= task.content %></li>
+    <% end %>
+  </ul>
+
+<%= link_to 'Write New Task', new_task_path %>

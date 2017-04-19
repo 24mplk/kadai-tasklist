@@ -1,0 +1,7 @@
+<h1><font color=#0000cc>Task (id = <%= @task.id %>)</font></h1>
+
+<p><%= @task.content %></p>
+
+<%= link_to 'Back to index', tasks_path %>
+<%= link_to 'Edit this Task', edit_task_path(@task) %>
+<%= link_to 'Delete this Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
