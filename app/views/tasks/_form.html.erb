@@ -1,20 +1,30 @@
-<%= form_for(task) do |f| %>
-  <% if task.errors.any? %>
-    <div id="error_explanation">
-            <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-      <ul>
-        <% task.errors.full_messages.each do |task| %>
-          <li><%= task %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <%= f.label :status, 'Status' %>
-  <%= f.text_field :status %>
+<div class="row">
+    <%= form_for(task) do |f| %>
+      <% if task.errors.any? %>
+        <div id="error_explanation">
+                <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+          <ul>
+            <% task.errors.full_messages.each do |task| %>
+              <li><%= task %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="col-sm-3">
+        <div class="form-group">
+          <%= f.label :status, 'Status' %>
+          <%= f.text_field :status, class: 'form-control' %>
+        </div>
+      </div>
 
-  <%= f.label :content, 'Task' %>
-  <%= f.text_field :content %>
-  
-  <%= f.submit 'Post' %>
-<% end %>
+      <div class="col-sm-offset-2 col-sm-3 col-lg-offset-3 col-lg-3">
+        <div class="form-group">
+          <%= f.label :content, 'Task' %>
+          <%= f.text_field :content, class: 'form-control' %>
+        </div>
+      </div>
+    
+    <%= f.submit 'Post', class: 'btn btn-primary' %>
+    <% end %>
+</div>
